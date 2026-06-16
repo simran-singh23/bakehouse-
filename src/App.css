@@ -1,0 +1,139 @@
+.hero-photo {
+  background:
+    linear-gradient(90deg, rgba(32, 20, 16, 0.82), rgba(99, 19, 47, 0.35)),
+    url('https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=1800&q=80');
+  background-position: center;
+  background-size: cover;
+}
+
+.attached-photo {
+  background:
+    linear-gradient(90deg, rgba(31, 16, 14, 0.86), rgba(120, 31, 51, 0.44)),
+    url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1800&q=80');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.section-wrap {
+  width: min(100% - 40px, 1152px);
+  margin: 0 auto;
+  padding: 78px 0;
+}
+
+.section-title {
+  margin-bottom: 34px;
+  text-align: center;
+}
+
+.section-title p,
+.tag {
+  color: #be123c;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-title h2 {
+  margin-top: 10px;
+  color: #1c1917;
+  font-size: clamp(2.1rem, 4vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.btn-main,
+.btn-light {
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  min-height: 46px;
+  padding: 0 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn-main {
+  background: #be123c;
+  color: white;
+  box-shadow: 0 16px 32px rgba(190, 18, 60, 0.25);
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, 0.9);
+  color: #7f1d1d;
+}
+
+.btn-main:hover,
+.btn-light:hover {
+  transform: translateY(-2px);
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #fecdd3;
+  border-radius: 8px;
+  background: white;
+  padding: 13px 14px;
+  outline: none;
+}
+
+.field:focus {
+  border-color: #be123c;
+  box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.12);
+}
+
+.animate-rise {
+  animation: riseIn 0.8s ease both;
+}
+
+.footer-wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-wave::before {
+  animation: slideLine 8s linear infinite;
+  background: linear-gradient(90deg, #fbbf24, #fb7185, #fbbf24);
+  content: '';
+  height: 4px;
+  left: -35%;
+  position: absolute;
+  right: -35%;
+  top: 0;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLine {
+  from {
+    transform: translateX(-20%);
+  }
+
+  to {
+    transform: translateX(20%);
+  }
+}
+
+@media (max-width: 768px) {
+  .attached-photo {
+    background-attachment: scroll;
+  }
+
+  .section-wrap {
+    width: min(100% - 28px, 1152px);
+    padding: 56px 0;
+  }
+}
