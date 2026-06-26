@@ -1,18 +1,57 @@
+import { NavLink } from 'react-router-dom'
+
 function Footer() {
   return (
-    <footer className="footer-wave bg-stone-950 text-white">
-      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 md:grid-cols-3">
-        <div>
-          <h2 className="text-2xl font-black">Bawra Bake House</h2>
-          <p className="mt-3 text-stone-300">Cakes, desserts and savouries baked fresh in Zirakpur.</p>
+    <footer className="bg-surface-container-highest border-t border-outline-variant/30">
+      <div className="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 w-full max-w-container-max mx-auto gap-gutter">
+        <div className="flex flex-col items-center md:items-start gap-4">
+          <div className="font-headline-md text-headline-md text-primary">Bawra Bakehouse</div>
+          <p className="font-body-md text-body-md text-on-surface-variant text-center md:text-left max-w-xs">
+            © 2026 Bawra Bakehouse. Passionately Eggless. Shiva Complex, Zirakpur.
+          </p>
         </div>
-        <div>
-          <h3 className="font-bold text-amber-200">Shop</h3>
-          <p className="mt-3 text-stone-300">Shiva Enclave, Patiala Chowk, Zirakpur</p>
-        </div>
-        <div>
-          <h3 className="font-bold text-amber-200">Best for</h3>
-          <p className="mt-3 text-stone-300">Birthdays, parties, tea time snacks and sweet cravings.</p>
+        
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="flex gap-6">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+            >
+              Facebook
+            </a>
+            <NavLink
+              to="/about"
+              className="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+            >
+              Our Story
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+            >
+              Contact
+            </NavLink>
+          </div>
+          <div className="flex gap-4">
+            <NavLink
+              to="/menu"
+              className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container group transition-all"
+            >
+              <span className="material-symbols-outlined text-primary group-hover:text-on-primary-container text-xl" style={{ fontVariationSettings: "'FILL' 0" }}>
+                favorite
+              </span>
+            </NavLink>
+          </div>
         </div>
       </div>
     </footer>

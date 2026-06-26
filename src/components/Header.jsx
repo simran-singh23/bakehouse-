@@ -1,49 +1,60 @@
 import { NavLink } from 'react-router-dom'
+import logo from '../assets/bawra-logo.png'
 
 function Header() {
   const links = [
     ['/', 'Home'],
     ['/menu', 'Menu'],
+    ['/desserts', 'Desserts'],
+    ['/ice-creams', 'Ice Creams'],
     ['/about', 'About'],
     ['/contact', 'Contact'],
   ]
 
   return (
-    <header className="sticky top-0 z-50 border-b border-rose-100 bg-white/90 backdrop-blur">
-
-      <nav className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-4
-       md:flex-row md:items-center md:justify-between">
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/30">
+      <nav className="mx-auto flex flex-col gap-4 px-margin-desktop py-4 w-full max-w-container-max md:flex-row md:items-center md:justify-between">
         <NavLink to="/" className="flex items-center gap-3">
-          <span className="grid h-11 w-11 place-items-center rounded-full
-           bg-rose-700 text-xl font-bold text-white shadow-sm">
-            
-            B
-          </span>
+          <img
+            src={logo}
+            alt="Bawra Bakehouse logo"
+            className="h-12 w-12 rounded-full border-2 border-primary-fixed-dim object-cover shadow-sm"
+          />
           <span>
-            <span className="block text-xl font-bold text-stone-950">Bawra Bake House</span>
-            <span className="block text-xs font-medium uppercase tracking-wider text-rose-700">
+            <span className="block text-headline-md font-headline-md text-primary tracking-tight">
+              Bawra Bakehouse
+            </span>
+            <span className="block text-[10px] font-bold uppercase tracking-wider text-secondary">
               Cakes . Desserts . Savouries
             </span>
           </span>
         </NavLink>
 
-        <div className="flex flex-wrap gap-2">
-          {links.map(([to, label]) => (
-            <NavLink key={to}
-              to={to}
-              className={({ isActive }) =>
+        <div className="flex flex-wrap items-center gap-6">
+          <div className="flex flex-wrap gap-4">
+            {links.map(([to, label]) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  `font-label-md text-label-md transition-colors duration-200 py-1 ${
+                    isActive
+                      ? 'text-primary font-bold border-b-2 border-primary'
+                      : 'text-on-surface-variant hover:text-primary'
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </div>
 
-                `rounded-full px-4 py-2 text-sm font-semibold transition ${
-                  isActive
-                 
-                  ? 'bg-rose-700 text-white shadow-sm'
-                    : 'text-stone-700 hover:bg-rose-50 hover:text-rose-800'
-                }`
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
+          <NavLink
+            to="/menu"
+            className="bg-primary text-on-primary px-5 py-2 rounded-lg font-label-md text-label-md hover:scale-95 transition-all duration-150 active:scale-90 inline-block text-center shadow-md shadow-primary/10"
+          >
+            Order Now
+          </NavLink>
         </div>
       </nav>
     </header>

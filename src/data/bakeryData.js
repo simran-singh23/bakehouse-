@@ -1,15 +1,122 @@
+ 
+const customCakePhotos = [
+  '/Images/cakes/_ (28).jpeg',
+  '/Images/cakes/~Onlinecake_in.jpeg',
+  '/Images/cakes/atcu.jpeg',
+  '/Images/cakes/Black Forest Cake _ Liv for Cake.jpeg',
+  '/Images/cakes/Black Forest Cake Design _ Order Cake Online Nepal.jpeg',
+  '/Images/cakes/bnmmm.jpeg',
+  '/Images/cakes/Butterscotch Cake.jpeg',
+  '/Images/cakes/Calgary _ Edmonton.jpeg',
+  '/Images/cakes/cipe You.jpeg',
+  '/Images/cakes/Coffee and walnut cake.jpeg',
+  '/Images/cakes/Easy Homemade Dessert.jpeg',
+  '/Images/cakes/erme.jpeg',
+  '/Images/cakes/f.jpg',
+
+  '/Images/cakes/Gulab jamun cake.jpeg',
+  '/Images/cakes/in jaipur.jpeg',
+  '/Images/cakes/leche_ @isa_delicias_nz.jpeg',
+  '/Images/cakes/nnkk.jpeg',
+
+  '/Images/cakes/Nutella Cake.jpeg',
+  '/Images/cakes/Red Velvet Cake.jpeg',
+  '/Images/cakes/rrrr.jpeg',
+]
+
+const customDessertPhotos = [
+  '/Images/desserts/ mdmmef.jpeg',
+  '/Images/desserts/2ejwnj.jpeg',
+  '/Images/desserts/2kenk3k.jpeg',
+  '/Images/desserts/aas.jpeg',
+  '/Images/desserts/bbbj.jpeg',
+  '/Images/desserts/bedfjkefjk.jpeg',
+  '/Images/desserts/biscoff.jpeg',
+  '/Images/desserts/by.jpeg',
+  '/Images/desserts/caje.jpeg.png',
+  '/Images/desserts/ccc.jpeg',
+  '/Images/desserts/coclqate.jpeg',
+  '/Images/desserts/cup.jpeg',
+  '/Images/desserts/ddd.jpeg',
+  '/Images/desserts/e3kde2k.jpeg',
+  '/Images/desserts/ebjdjed.jpeg',
+  '/Images/desserts/ekfrk.jpeg',
+  '/Images/desserts/ekkk.jpeg',
+  '/Images/desserts/emkkfek.jpeg',
+  '/Images/desserts/ffff.jpeg',
+  '/Images/desserts/Fudgy Chocolate Brownies – Rich & Decadent Treat.jpeg',
+  '/Images/desserts/iiii.jpeg',
+  '/Images/desserts/jejej.jpeg',
+  '/Images/desserts/jejj.jpeg',
+  '/Images/desserts/jnrfj.jpeg',
+  '/Images/desserts/kdekf42k.jpeg',
+  '/Images/desserts/kfjfj.jpeg',
+  '/Images/desserts/kfjrfjk.jpeg',
+  '/Images/desserts/kkekek.jpeg',
+  '/Images/desserts/km3mk3k.jpeg',
+  '/Images/desserts/l2kol3lo.jpeg',
+  '/Images/desserts/lmdeqwldelm.jpeg',
+  '/Images/desserts/mango.jpeg',
+  '/Images/desserts/mle2l2l.jpeg',
+  '/Images/desserts/mufin.jpeg',
+  '/Images/desserts/nfdnfnfnfnnf.jpeg',
+  '/Images/desserts/njcdjncdwj.jpeg',
+  '/Images/desserts/njdfnjfnr.jpeg',
+  '/Images/desserts/nnn.jpeg',
+  '/Images/desserts/nnnf.jpeg',
+  '/Images/desserts/nutlr.jpeg',
+  '/Images/desserts/oerfrkf.jpeg',
+  '/Images/desserts/pine.jpeg',
+  '/Images/desserts/rasmalai.jpeg',
+  '/Images/desserts/rasmalajfjfji.jpeg',
+  '/Images/desserts/red.jpeg',
+  '/Images/desserts/sss.jpeg',
+  '/Images/desserts/tt.jpeg',
+  '/Images/desserts/ttt.jpeg',
+  '/Images/desserts/wendndn.jpeg',
+  '/Images/desserts/www.jpeg',
+
+]
+
+const customIceCreamPhotos = [
+  '/Images/icecreams/ice cream.jpeg',
+  '/Images/icecreams/ice-cream-01.jpeg',
+  '/Images/icecreams/ice-cream-02.jpeg',
+  '/Images/icecreams/ice-cream-03.jpeg',
+  '/Images/icecreams/ice-cream-04.jpeg',
+  '/Images/icecreams/ice-cream-05.jpeg',
+
+  '/Images/icecreams/ice-cream-06.jpeg',
+  '/Images/icecreams/ice-cream-07.jpeg',
+
+  '/Images/icecreams/ice-cream-08.jpeg',
+  '/Images/icecreams/ice-cream-09.jpeg',
+  '/Images/icecreams/ice-cream-10.jpeg',
+]
+
+const productPhoto = (category, name, lock) => {
+  const search = encodeURIComponent(`${category} ${name}`)
+
+  return `https://source.unsplash.com/900x700/?${search}&sig=${lock}`
+
+}
+
+const cakePhoto = (name, index) => {
+  return customCakePhotos[index] || cakePhotos[index] || productPhoto('bakery cake celebration dessert', name, 1001 + index)
+}
+
 export const products = [
   {
     name: 'Signature Cakes',
     desc: 'Chocolate truffle, red velvet, fruit cream and custom birthday cakes.',
     price: 'from Rs. 550',
-    img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80',
+    img: customCakePhotos[0] || 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80',
   },
   {
     name: 'Dessert Cups',
     desc: 'Tiramisu jars, brownies, mousse cups and tiny sweet treats.',
     price: 'from Rs. 120',
-    img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80',
+    img: customDessertPhotos[0] || 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80',
   },
   {
     name: 'Savouries',
@@ -27,3 +134,234 @@ export const specials = [
   'Puffs',
   'Garlic toast',
 ]
+
+export const brownieItems = [
+  {
+    id: 1,
+    name: "Chocolate Brownie",
+    price: 180,
+    rating: "4.9",
+    img: "/Images/brownies/fgdg.jpeg",
+    desc: "Rich fudgy chocolate brownie."
+  },
+  {
+    id: 2,
+    name: "Walnut Brownie",
+    price: 220,
+    rating: "4.8",
+    img: "/Images/brownies/jejjej.jpeg",
+    desc: "Chocolate brownie with walnuts."
+  },
+  {
+    id: 3,
+    name: "Fudge Brownie",
+    price: 250,
+    rating: "5.0",
+    img: "/Images/brownies/jfffjj.jpeg",
+    desc: "Extra fudgy brownie."
+  },
+  {
+    id: 4,
+    name: "Dark Chocolate Brownie",
+    price: 230,
+    rating: "4.9",
+    img: "/Images/brownies/jvfjfv.jpeg",
+    desc: "Made with dark chocolate."
+  },
+  {
+    id: 5,
+    name: "Classic Brownie",
+    price: 190,
+    rating: "4.7",
+    img: "/Images/brownies/ndd.jpeg",
+    desc: "Classic homemade brownie."
+  }
+];
+
+const cakePhotos = [
+  'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=900&q=80',
+]
+
+const cakeNames = [
+  'Chocolate Truffle Cake',
+  'Red Velvet Cream Cake',
+  'Black Forest Cake',
+  'White Forest Cake',
+  'Butterscotch Crunch Cake',
+  'Pineapple Fresh Cream Cake',
+  'Strawberry Dream Cake',
+  'Blueberry Cheese Cake',
+  'Mango Masti Cake',
+  'KitKat Gems Cake',
+  'Oreo Chocolate Cake',
+  'Coffee Walnut Cake',
+  'Rasmalai Fusion Cake',
+  'Gulab Jamun Cake',
+  'Ferrero Rocher Cake',
+  'Nutella Hazelnut Cake',
+  'Vanilla Almond Cake',
+  'Caramel Drip Cake',
+  'Choco Chip Cake',
+  'Fruit Overload Cake',
+  'Dutch Chocolate Cake',
+  'Rainbow Layer Cake',
+  'Belgian Chocolate Cake',
+  'Rose Pistachio Cake',
+  'Kesar Badam Cake',
+  'Lemon Cream Cake',
+  'Mocha Fudge Cake',
+  'Coconut Cream Cake',
+  'Choco Strawberry Cake',
+  'Tiramisu Cake',
+  'Marble Sponge Cake',
+  'Dark Chocolate Cake',
+  'Milk Chocolate Cake',
+  'Banana Caramel Cake',
+  'Orange Chocolate Cake',
+  'Classic Vanilla Cake',
+  'Fresh Kiwi Cake',
+  'Paan Gulkand Cake',
+  'Choco Lava Cake',
+  'Brownie Tower Cake',
+  'Anniversary Heart Cake',
+  'Photo Print Cake',
+  'Princess Theme Cake',
+  'Cricket Theme Cake',
+  'Unicorn Theme Cake',
+  'Doll Cake',
+  'Cupcake Pull Apart Cake',
+  'Chocolate Pinata Cake',
+  'Minimal Floral Cake',
+  'Eggless Signature Cake',
+]
+
+export const cakeItems = cakeNames.map((name, index) => ({
+  id: `cake-${index + 1}`,
+  name,
+  price: 499 + (index % 10) * 80,
+  rating: (4.1 + (index % 9) * 0.1).toFixed(1),
+  img: cakePhoto(name, index),
+  
+  fallbackImg: cakePhotos[index % cakePhotos.length],
+  eggless: index % 2 === 0 || name.toLowerCase().includes('eggless'),
+  desc: `${name} is freshly prepared with soft sponge, smooth cream and balanced sweetness. It is good for birthdays, anniversaries and family celebrations.`,
+}))
+
+const dessertNames = [
+  'Chocolate Brownie',
+  'Walnut Brownie',
+  'Fudge Brownie',
+  'Oreo Brownie',
+  'Red Velvet Pastry',
+  'Black Forest Pastry',
+  'Pineapple Pastry',
+  'Chocolate Truffle Pastry',
+  'Butterscotch Pastry',
+  'Blueberry Pastry',
+  'Strawberry Cupcake',
+  'Vanilla Cupcake',
+  'Chocolate Cupcake',
+  'Oreo Cupcake',
+  'Red Velvet Cupcake',
+  'Nutella Cupcake',
+  'Tiramisu Cup',
+  'Mango Mousse Cup',
+  'Chocolate Mousse Cup',
+  'Blueberry Cheese Jar',
+  'Rasmalai Jar',
+
+  'Gulab Jamun Jar',
+
+  'Fruit Cream Cup',
+  'Caramel Custard',
+  'Mini Donut Box',
+  'Choco Lava Cup',
+  'Brownie Sundae Cup',
+  'Pastry Combo Box',
+  'Cupcake Combo Box',
+  'Dessert Shot Glass',
+  'Lemon Tart',
+  'Chocolate Tart',
+  'Fruit Tart',
+  'Cheese Tart',
+  'Cream Roll',
+  'Chocolate Eclair',
+  'Macaron Mix Box',
+  'Cake Pop',
+  'Choco Chip Muffin',
+  'Blueberry Muffin',
+  'Banana Muffin',
+  'Coffee Dessert Cup',
+  'Hazelnut Brownie',
+  'Dark Chocolate Pastry',
+  'White Chocolate Pastry',
+  'Rainbow Cupcake',
+  'Mini Cheesecake',
+  'Biscoff Dessert Jar',
+  'Classic Pudding Cup',
+  'Assorted Dessert Box',
+]
+
+export const dessertItems = dessertNames.map((name, index) => ({
+  id: `dessert-${index + 1}`,
+  name,
+  price: 79 + (index % 8) * 25,
+  rating: (4.0 + (index % 10) * 0.09).toFixed(1),
+  img: customDessertPhotos[index] || productPhoto('bakery dessert pastry brownie cupcake', name, 2001 + index),
+  eggless: index % 3 !== 0,
+  desc: `${name} is made fresh for dessert cravings, party boxes and quick sweet bites. It is packed neatly and tastes best when served chilled.`,
+}))
+
+
+const iceCreamNames = [
+  'Hocco Chocolate Cone',
+  'Hocco Vanilla Cup',
+  'Hocco Strawberry Cup',
+  'Hocco Butterscotch Cup',
+  'Hocco Mango Bar',
+  'Hocco Choco Bar',
+  'Hocco Kulfi Stick',
+  'Hocco Rajbhog Cup',
+  'Hocco Kesar Pista Cup',
+  'Hocco Black Currant Cup',
+  'Hocco Belgian Chocolate Tub',
+  'Hocco Cookie Cream Tub',
+  'Hocco Choco Chips Tub',
+  'Hocco Fruit Overload Tub',
+  'Hocco Almond Carnival',
+  'Hocco Coffee Crunch',
+  'Hocco Caramel Swirl',
+  'Hocco Vanilla Family Pack',
+  'Hocco Chocolate Family Pack',
+  'Hocco Mango Family Pack',
+  'Hocco Cassata Slice',
+  'Hocco Choco Taco',
+  'Hocco Sundae Cup',
+  'Hocco Brownie Sundae',
+  'Hocco Blueberry Cup',
+  'Hocco Rose Kulfi',
+  'Hocco Paan Kulfi',
+  'Hocco Orange Bar',
+  'Hocco Raspberry Cup',
+  'Hocco Party Pack',
+]
+
+export const iceCreamItems = iceCreamNames.map((name, index) => ({
+  id: `ice-${index + 1}`,
+  name,
+  price: 45 + (index % 10) * 20,
+  rating: (4.1 + (index % 8) * 0.1).toFixed(1),
+  
+  img: customIceCreamPhotos[index] || productPhoto('ice cream dessert frozen treat', name, 3001 + index),
+  eggless: true,
+  desc: `${name} is a chilled Hocco ice cream option for after-cake treats, summer cravings and party add-ons. Keep it frozen and enjoy it fresh.`,
+}))

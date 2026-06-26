@@ -1,6 +1,6 @@
 .hero-photo {
   background:
-    linear-gradient(90deg, rgba(32, 20, 16, 0.82), rgba(99, 19, 47, 0.35)),
+    linear-gradient(90deg, rgba(44, 22, 14, 0.9), rgba(68, 42, 34, 0.7), rgba(128, 80, 98, 0.42)),
     url('https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=1800&q=80');
   background-position: center;
   background-size: cover;
@@ -8,7 +8,7 @@
 
 .attached-photo {
   background:
-    linear-gradient(90deg, rgba(31, 16, 14, 0.86), rgba(120, 31, 51, 0.44)),
+    linear-gradient(90deg, rgba(44, 22, 14, 0.88), rgba(68, 42, 34, 0.48)),
     url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1800&q=80');
   background-attachment: fixed;
   background-position: center;
@@ -28,7 +28,7 @@
 
 .section-title p,
 .tag {
-  color: #be123c;
+  color: #805062;
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -37,7 +37,7 @@
 
 .section-title h2 {
   margin-top: 10px;
-  color: #1c1917;
+  color: #442a22;
   font-size: clamp(2.1rem, 4vw, 3.8rem);
   font-weight: 900;
   line-height: 1.05;
@@ -56,14 +56,14 @@
 }
 
 .btn-main {
-  background: #be123c;
+  background: #442a22;
   color: white;
-  box-shadow: 0 16px 32px rgba(190, 18, 60, 0.25);
+  box-shadow: 0 16px 32px rgba(68, 42, 34, 0.22);
 }
 
 .btn-light {
   background: rgba(255, 255, 255, 0.9);
-  color: #7f1d1d;
+  color: #442a22;
 }
 
 .btn-main:hover,
@@ -73,16 +73,101 @@
 
 .field {
   width: 100%;
-  border: 1px solid #fecdd3;
+  border: 1px solid #d4c3be;
   border-radius: 8px;
   background: white;
+  color: #442a22;
   padding: 13px 14px;
   outline: none;
 }
 
+.field::placeholder {
+  color: #827470;
+}
+
 .field:focus {
-  border-color: #be123c;
-  box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.12);
+  border-color: #805062;
+  box-shadow: 0 0 0 3px rgba(128, 80, 98, 0.14);
+}
+
+.pager-btn {
+  background: #442a22;
+  border-radius: 999px;
+  color: white;
+  font-weight: 800;
+  min-height: 42px;
+  padding: 0 18px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.pager-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.pager-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.special-strip {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 217, 228, 0.5), transparent 28%),
+    linear-gradient(135deg, #f5f4ec, #fbf9f1 48%, #ffffff);
+  border-block: 1px solid #d4c3be;
+}
+
+.deal-card {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid #d4c3be;
+  border-radius: 8px;
+  min-height: 190px;
+  padding: 22px;
+  text-align: left;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+}
+
+.deal-card span {
+  background: #ffd9e4;
+  border-radius: 999px;
+  color: #65394b;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 5px 10px;
+}
+
+.deal-card h3 {
+  color: #442a22;
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-top: 28px;
+}
+
+.deal-card p {
+  color: #504441;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+.deal-card:hover,
+.deal-card-active {
+  background: #442a22;
+  box-shadow: 0 20px 45px rgba(68, 42, 34, 0.22);
+  transform: translateY(-8px);
+}
+
+.deal-card:hover span,
+.deal-card-active span {
+  animation: badgePulse 1.4s ease infinite;
+  background: #cceacd;
+  color: #334d37;
+}
+
+.deal-card:hover h3,
+.deal-card:hover p,
+.deal-card-active h3,
+.deal-card-active p {
+  color: white;
 }
 
 .animate-rise {
@@ -124,6 +209,17 @@
 
   to {
     transform: translateX(20%);
+  }
+}
+
+@keyframes badgePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
   }
 }
 
