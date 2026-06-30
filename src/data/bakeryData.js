@@ -85,13 +85,20 @@ const customIceCreamPhotos = [
   '/Images/icecreams/ice-cream-03.jpeg',
   '/Images/icecreams/ice-cream-04.jpeg',
   '/Images/icecreams/ice-cream-05.jpeg',
-
   '/Images/icecreams/ice-cream-06.jpeg',
   '/Images/icecreams/ice-cream-07.jpeg',
-
   '/Images/icecreams/ice-cream-08.jpeg',
   '/Images/icecreams/ice-cream-09.jpeg',
   '/Images/icecreams/ice-cream-10.jpeg',
+  '/Images/icecreams/chocolate.jpeg',
+  '/Images/icecreams/vanilla.jpeg',
+  '/Images/icecreams/Tub_Cookie-Dough.png',
+  '/Images/icecreams/jekke.jpg',
+  '/Images/icecreams/g.jpeg',
+  '/Images/icecreams/hdh.jpeg',
+  '/Images/icecreams/dkkdkk.jpeg',
+  '/Images/icecreams/kdkdkk.jpeg',
+  '/Images/icecreams/kkkkn.jpeg',
 ]
 
 const productPhoto = (category, name, lock) => {
@@ -102,7 +109,7 @@ const productPhoto = (category, name, lock) => {
 }
 
 const cakePhoto = (name, index) => {
-  return customCakePhotos[index] || cakePhotos[index] || productPhoto('bakery cake celebration dessert', name, 1001 + index)
+  return customCakePhotos[index % customCakePhotos.length]
 }
 
 export const products = [
@@ -164,6 +171,7 @@ export const brownieItems = [
     id: 4,
     name: "Dark Chocolate Brownie",
     price: 230,
+    
     rating: "4.9",
     img: "/Images/brownies/jvfjfv.jpeg",
     desc: "Made with dark chocolate."
@@ -316,7 +324,7 @@ export const dessertItems = dessertNames.map((name, index) => ({
   name,
   price: 79 + (index % 8) * 25,
   rating: (4.0 + (index % 10) * 0.09).toFixed(1),
-  img: customDessertPhotos[index] || productPhoto('bakery dessert pastry brownie cupcake', name, 2001 + index),
+  img: customDessertPhotos[index % customDessertPhotos.length],
   eggless: index % 3 !== 0,
   desc: `${name} is made fresh for dessert cravings, party boxes and quick sweet bites. It is packed neatly and tastes best when served chilled.`,
 }))
@@ -360,8 +368,7 @@ export const iceCreamItems = iceCreamNames.map((name, index) => ({
   name,
   price: 45 + (index % 10) * 20,
   rating: (4.1 + (index % 8) * 0.1).toFixed(1),
-  
-  img: customIceCreamPhotos[index] || productPhoto('ice cream dessert frozen treat', name, 3001 + index),
+  img: customIceCreamPhotos[index % customIceCreamPhotos.length],
   eggless: true,
   desc: `${name} is a chilled Hocco ice cream option for after-cake treats, summer cravings and party add-ons. Keep it frozen and enjoy it fresh.`,
 }))

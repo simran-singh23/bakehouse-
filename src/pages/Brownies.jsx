@@ -12,11 +12,16 @@ function Brownies() {
       <div className="mb-8 rounded-xl border border-[#d4c3be] bg-white p-6 shadow-sm md:flex md:items-center md:justify-between md:gap-8">
         <div>
           <p className="text-xs font-black uppercase tracking-widest text-[#805062]">Brownie counter</p>
+
           <h3 className="mt-2 text-2xl font-black text-[#442a22]">Fudgy picks for gifting and cravings.</h3>
+
         </div>
         <p className="mt-4 max-w-2xl leading-7 text-[#504441] md:mt-0">
+          
+
           Select a brownie, add quantity and delivery details, then send the order directly to
           Bawra Bakehouse on WhatsApp.
+
         </p>
       </div>
 
@@ -35,7 +40,9 @@ function Brownies() {
             </div>
             <div className="p-5">
               <div className="flex items-start justify-between gap-3">
+
                 <h3 className="text-xl font-black text-[#442a22]">{item.name}</h3>
+
                 <span className="shrink-0 rounded-full bg-[#ffd9e4] px-3 py-1 text-sm font-black text-[#65394b]">
                   Rs. {item.price}
                 </span>
@@ -45,6 +52,7 @@ function Brownies() {
                 <span className="rounded-full bg-[#cceacd] px-3 py-1 text-[#334d37]">Eggless</span>
               </div>
               <p className="mt-3 leading-7 text-[#504441]">{item.desc}</p>
+
               <NavLink to={`/brownies/${item.id}`} className="btn-main mt-5">
                 Order
               </NavLink>
